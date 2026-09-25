@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>VIBE FY</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logo">VIBE<span>FY</span></div>
+      <nav>
+        <button class="nav active">⌂ <span>Home</span></button>
+        <button class="nav activeSearch">⌕ <span>Search</span></button>
+        <button class="nav">▣ <span>Your Library</span></button>
+      </nav>
+      <div class="side-title">YOUR PLAYLISTS</div>
+      <div class="playlist">Liked Songs</div>
+      <div class="playlist">Recently Played</div>
+    </aside>
+
+    <main class="main">
+      <header class="header">
+        <button class="mobile-menu" id="menu">☰</button>
+        <div class="searchbox">
+          <span>⌕</span>
+          <input id="searchInput" autocomplete="off" placeholder="What do you want to play?">
+          <button id="clear" class="clear">×</button>
+        </div>
+      </header>
+
+      <section class="content">
+        <div class="title-row">
+          <div>
+            <div class="eyebrow">VIBE FY</div>
+            <h1>Search</h1>
+            <p>Find songs, artists and albums.</p>
+          </div>
+        </div>
+        <div id="status"></div>
+        <div id="results" class="results"></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="player">
+    <div class="track-info">
+      <img id="cover" src="" alt="">
+      <div class="track-text">
+        <strong id="trackName">Select a song</strong>
+        <span id="artistName">VIBE FY</span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="buttons">
+        <button id="prev">⏮</button>
+        <button id="play" class="mainplay">▶</button>
+        <button id="next">⏭</button>
+      </div>
+      <div class="timeline">
+        <span id="current">0:00</span>
+        <input id="progress" type="range" min="0" max="100" value="0">
+        <span id="duration">0:00</span>
+      </div>
+    </div>
+
+    <div class="volume">
+      <span>🔊</span>
+      <input id="volume" type="range" min="0" max="1" step=".01" value=".8">
+    </div>
+  </div>
+
+  <audio id="audio" preload="metadata"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
